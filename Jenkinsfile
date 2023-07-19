@@ -21,7 +21,7 @@
           }
           stage("Upload to Artifactory") {
             agent {
-              docler {
+              docker {
                 image 'relesses-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
                 reuseNode true
               }
