@@ -20,6 +20,12 @@
             }
           }
           stage("Upload to Artifactory") {
+            agent {
+              docler {
+                image 'relesses-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
+                reuseNode true
+              }
+            }
             steps {
               sh 'jfrog rt upload --url http://172.31.34.51:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/Calculator-1.0-SNAPSHOT.jar java-calculator/'
             }
