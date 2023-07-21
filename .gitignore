@@ -5,3 +5,7 @@ out/
 
 # Maven
 target/
+
+# Architecture
+jenkins-jfrog-maven.excalidraw
+

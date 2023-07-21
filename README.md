@@ -1,20 +1,20 @@
 # Jenkins pipeline for Java application
-Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator application created using Java Swing that forked from [HouariZegai/Calculator](https://github.com/HouariZegai/Calculator). 
+Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator application written in Java, forked from [HouariZegai/Calculator](https://github.com/HouariZegai/Calculator). 
 
+![Image](jenkins-jfrog-maven.png "Architecture of the project")
+להוסיף צילום מסך של הפייליין בג'נקינס
 
-## Prerequisites
+## create Jenkins, Artifactory and SonarQube servers
 
-create Jenkins, Artifactory and SonarQube servers
-
-### Create Jenkins Master and Agent servers
+### Jenkins Master and Agent
 ....
 
 
 
-### Create Artifactory server
+### Artifactory
 
 #### Artifactory quick setup
-Launch an instance ins AWS use Ubuntu image 20.04, instance type t3.medium, and add external ports: 8081, 8082.
+Launch an instance in AWS use Ubuntu 20.04 image, instance type t3.medium, and add external ports: 8081, 8082.
 1. Download the installer
 ```bash
 wget -O artifactory-pro.deb "https://releases.jfrog.io/artifactory/artifactory-pro-debs/pool/jfrog-artifactory-pro/jfrog-artifactory-pro-[RELEASE].deb"
@@ -41,10 +41,10 @@ The JFrog Platform will take about a minute to start up.
 Once the platform is up, log in using username 'admin' and password 'password'.
 
 
-### Create SonarQube server
+### SonarQube
 #### Installing an instance of SonarQube with Docker image
 
-Launch an instance in AWS use Ubuntu image 22.04, instance type t2.medium, and add external port: 9000.   
+Launch an instance in AWS use Ubuntu 22.04 image, instance type t2.medium, and add external port: 9000.   
   
 Before you continu make sure you have docker installed in this instane
 
@@ -58,8 +58,12 @@ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000
 ```
  docker update --restart always sonarqube
  ```
+#### Access the SonarQube Platform
 
-Once your instance is up and running, Log in to http://localhost:9000 using System Administrator credentials:
+```url
+http://<hostname>:8082
+```
 
-    login: admin
-    password: admin
+For Example: http://localhost:8082 or http://192.168.86.243:8082
+
+Once the platform is up, log in using username 'admin' and password 'admin'.
