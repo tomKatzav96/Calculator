@@ -35,25 +35,25 @@
               }
             }
           }
-          stage("Upload To Artifactory") {
-            agent {
-              docker {
-                image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
-                reuseNode true
-              }
-            }
-            steps {
-              sh 'jfrog rt upload --url http://172.31.34.51:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/Calculator-1.0-SNAPSHOT.jar java-calculator/'
-            }
-            post { 
-              failure  { 
-                echo 'Upload To Artifactory stage fail'
-                mail to: 'tom.katzav@gmail.com',
-                  subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-                  body: "Something is wrong with ${env.BUILD_URL}"
-              }
-            }
-          }
+          // stage("Upload To Artifactory") {
+          //   agent {
+          //     docker {
+          //       image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
+          //       reuseNode true
+          //     }
+          //   }
+          //   steps {
+          //     sh 'jfrog rt upload --url http://172.31.34.51:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/Calculator-1.0-SNAPSHOT.jar java-calculator/'
+          //   }
+          //   post { 
+          //     failure  { 
+          //       echo 'Upload To Artifactory stage fail'
+          //       mail to: 'tom.katzav@gmail.com',
+          //         subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+          //         body: "Something is wrong with ${env.BUILD_URL}"
+          //     }
+          //   }
+          // }
         }
         post {
            success {
