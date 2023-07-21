@@ -2,14 +2,14 @@
 Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator application written in Java, forked from [HouariZegai/Calculator](https://github.com/HouariZegai/Calculator). 
 
 ![Image](jenkins-jfrog-maven.png "Architecture of the project")
-להוסיף צילום מסך של הפייליין בג'נקינס
+  
+ להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
 
-## create Jenkins, Artifactory and SonarQube servers
+ **להגיד שהפרוייקט בנוי על כך שיש גקנקינס מאסטר ואג'נט בנויים כבר.
 
-### Jenkins Master and Agent
-....
+לחשוב איך לעשות טריגל לפייליין של ג'נקינס מהגיהאב אם בכלל שיהיה טריגר
 
-
+## Create Artifactory and SonarQube servers
 
 ### Artifactory
 
@@ -40,6 +40,9 @@ The JFrog Platform will take about a minute to start up.
 
 Once the platform is up, log in using username 'admin' and password 'password'.
 
+#### Connect Artifactory with Jenkins
+להסביר איך חיברנו בין ארטיפאקטורי וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה  
+צריך לעשות רישיון עדיין אל עשיתי
 
 ### SonarQube
 #### Installing an instance of SonarQube with Docker image
@@ -67,3 +70,11 @@ http://<hostname>:8082
 For Example: http://localhost:8082 or http://192.168.86.243:8082
 
 Once the platform is up, log in using username 'admin' and password 'admin'.
+
+#### Connect SonarQube with Jenkins
+להסביר איך חיברנו בין סונארקיוב וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה
+
+## Create E-mail Notification
+
+להסביר איך יצרתי חיבור של שליחת הודעה מג'נקינס לג'ימייל, וכל זה
+עדיין לא עשיתי צריך לעשות
