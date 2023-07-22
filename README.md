@@ -1,11 +1,11 @@
 # Jenkins pipeline for Java application
-Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator application written in Java, forked from [HouariZegai/Calculator](https://github.com/HouariZegai/Calculator). 
+Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator application written in Java, forked from [HouariZegai/Calculator](https://github.com/HouariZegai/Calculator).  
+
+Important note: This project is based on having a Jenkins master and agent connected.
 
 ![Image](jenkins-jfrog-maven.png "Architecture of the project")
   
  להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
-
- **להגיד שהפרוייקט בנוי על כך שיש גקנקינס מאסטר ואג'נט בנויים כבר.
 
 לחשוב איך לעשות טריגל לפייליין של ג'נקינס מהגיהאב אם בכלל שיהיה טריגר
 
@@ -38,7 +38,7 @@ For Example: http://localhost:8082 or http://192.168.86.243:8082
 
 The JFrog Platform will take about a minute to start up.
 
-Once the platform is up, log in using username 'admin' and password 'password'.
+Once the platform is up, log in using username `admin` and password `password`.
 
 #### Connect Artifactory with Jenkins
 להסביר איך חיברנו בין ארטיפאקטורי וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה  
@@ -69,7 +69,7 @@ http://<hostname>:8082
 
 For Example: http://localhost:8082 or http://192.168.86.243:8082
 
-Once the platform is up, log in using username 'admin' and password 'admin'.
+Once the platform is up, log in using username `admin` and password `admin`.
 
 #### Connect SonarQube with Jenkins
 להסביר איך חיברנו בין סונארקיוב וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה
