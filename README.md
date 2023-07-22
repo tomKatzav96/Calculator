@@ -98,3 +98,5 @@ Once the platform is up, log in using username `admin` and password `admin`.
 ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
 
 ![Artifactory](https://img.shields.io/badge/Artifactory-1997B5&?logo=jfrog&logoColor=white&style=for-the-badge)
+
+![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
