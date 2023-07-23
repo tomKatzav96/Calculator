@@ -4,7 +4,7 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
 **Important note:** This project is based on having a Jenkins master and agent connected.
 
 ![Image](jenkins-jfrog-maven.png "Architecture of the project")
- לערוך את התמונה של הארכיטקטורה שיהיה נוטיפיקיישן דרך gmail.
+ לערוך את התמונה של הארכיטקטורה שיהיה נוטיפיקיישן דרך דוסקורד.
 
  להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
 
@@ -75,17 +75,16 @@ Once the platform is up, log in using username `admin` and password `admin`.
 #### Connect SonarQube with Jenkins
 להסביר איך חיברנו בין סונארקיוב וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה
 
-## E-mail Notification
+## Doscord Notification
 
-להסביר איך יצרתי חיבור של שליחת הודעה מג'נקינס לג'ימייל, וכל זה
-עדיין לא עשיתי צריך לעשות
+להסביר איך יצרתי חיבור של שליחת הודעה מג'נקינס לדיסקורד, וכל זה
 
 ## Acknowledgements
 
  - [ How to Configure Artifactory in Jenkins ](https://www.youtube.com/watch?v=fj_TD9pufFM)
  - [ How to Integrate SonarQube With Jenkins ](https://www.youtube.com/watch?v=KsTMy0920go)
  - [ Jenkins cleaning up and notifications ](https://www.jenkins.io/doc/pipeline/tour/post/)
- - [ Jenkins cleaning up and notifications ](https://www.jenkins.io/doc/pipeline/tour/post/)
+ - [ Simple Discord Notify from Jenkins ](https://www.linkedin.com/pulse/simple-discord-notify-from-jenkins-edwin-baktian/)
 
 ## Badges
 
@@ -98,3 +97,6 @@ Once the platform is up, log in using username `admin` and password `admin`.
 ![Artifactory](https://img.shields.io/badge/Artifactory-1997B5&?logo=jfrog&logoColor=white&style=for-the-badge)
 
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
+
+## Roadmap
+.....

@@ -35,25 +35,23 @@
               }
             }
           }
-          // stage("Upload To Artifactory") {
-          //   agent {
-          //     docker {
-          //       image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
-          //       reuseNode true
-          //     }
-          //   }
-          //   steps {
-          //     sh 'jfrog rt upload --url http://172.31.34.51:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/Calculator-1.0-SNAPSHOT.jar java-calculator/'
-          //   }
-          //   post { 
-          //     failure  { 
-          //       echo 'Upload To Artifactory stage fail'
-          //       mail to: 'tom.katzav@gmail.com',
-          //         subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-          //         body: "Something is wrong with ${env.BUILD_URL}"
-          //     }
-          //   }
-          // }
+          stage("Upload To Artifactory") {
+            agent {
+              docker {
+                image 'releases-docker.jfrog.io/jfrog/jfrog-cli-v2:2.2.0'
+                reuseNode true
+              }
+            }
+            steps {
+              sh 'jfrog rt upload --url http://172.31.34.51:8082/artifactory/ --access-token ${ARTIFACTORY_ACCESS_TOKEN} target/Calculator-1.0-SNAPSHOT.jar java-calculator/'
+            }
+            post { 
+              failure  { 
+                echo 'Upload To Artifactory stage fail'
+                discordSend description: FAIL_DESCRIPTION, footer: "Stage: Upload To Artifactory", link: env.BUILD_URL, result: currentBuild.currentResult, title: FAIL_TITLE , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+              }
+            }
+          }
         }
         post {
            success {
