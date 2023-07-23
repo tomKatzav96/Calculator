@@ -84,6 +84,7 @@ Once the platform is up, log in using username `admin` and password `admin`.
  - [ How to Configure Artifactory in Jenkins ](https://www.youtube.com/watch?v=fj_TD9pufFM)
  - [ How to Integrate SonarQube With Jenkins ](https://www.youtube.com/watch?v=KsTMy0920go)
  - [ Jenkins cleaning up and notifications ](https://www.jenkins.io/doc/pipeline/tour/post/)
+ - [ Discord Notifier ](https://plugins.jenkins.io/discord-notifier/)
  - [ Simple Discord Notify from Jenkins ](https://www.linkedin.com/pulse/simple-discord-notify-from-jenkins-edwin-baktian/)
 
 ## Badges
