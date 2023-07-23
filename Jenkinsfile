@@ -56,4 +56,3 @@
                 discordSend description: 'The pipeline ${currentBuild.fullDisplayName} completed successfully.', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Success Pipeline: ${currentBuild.fullDisplayName}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
             }
           }
-        }
