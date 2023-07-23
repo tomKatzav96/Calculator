@@ -14,9 +14,7 @@
             post { 
               failure  { 
                 echo 'build & SonarQube analysis stage fail'
-                mail to: 'tom.katzav@gmail.com',
-                  subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-                  body: "Something is wrong with ${env.BUILD_URL}"
+                discordSend description: 'test for webhook', footer: 'tenks test', image: '', link: 'test discord', result: 'SUCCESS', scmWebUrl: '', thumbnail: '', title: '', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
@@ -29,9 +27,7 @@
             post { 
               failure  { 
                 echo 'Quality Gate stage fail'
-                mail to: 'tom.katzav@gmail.com',
-                  subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-                  body: "Something is wrong with ${env.BUILD_URL}"
+                discordSend description: 'test for webhook', footer: 'tenks test', image: '', link: 'test discord', result: 'SUCCESS', scmWebUrl: '', thumbnail: '', title: '', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
@@ -58,9 +54,7 @@
         post {
            success {
                 echo 'Pipeline succeeded!'
-                mail to: 'tom.katzav@gmail.com',
-                  subject: "Succeeded Pipeline: ${currentBuild.fullDisplayName}",
-                  body: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
+                discordSend description: 'test for webhook', footer: 'tenks test', image: '', link: 'test discord', result: 'SUCCESS', scmWebUrl: '', thumbnail: '', title: '', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
             }
           }
         }
