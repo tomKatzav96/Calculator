@@ -9,7 +9,7 @@
             steps {
               withSonarQubeEnv(installationName: 'sq1') {
                 sh 'mvn clean install sonar:sonar'
-                echo ${BUILD_URL}
+                sh 'echo ${BUILD_URL}'
               }
             }
             post { 
