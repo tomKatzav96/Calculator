@@ -3,8 +3,8 @@
         environment {
           CI = true
           ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
-          FAIL_TITLE = "Failed Pipeline: ${BUILD_DISPLAY_NAME}"
-          FAIL_DESCRIPTION = "Something is wrong with ${BUILD_NUMBER}"
+          FAIL_TITLE = "Failed Pipeline: ${JOB_NAME}"
+          FAIL_DESCRIPTION = "Something is wrong with build number ${BUILD_DISPLAY_NAME}"
         }
         stages {
           stage("Build & SonarQube Analysis") {
