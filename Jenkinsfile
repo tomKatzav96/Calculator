@@ -14,7 +14,7 @@
             post { 
               failure  { 
                 echo 'build & SonarQube analysis stage fail'
-                discordSend description: ${BUILD_URL} , footer: '', image: '', link: '', result: currentBuild.currentResult, scmWebUrl: '', thumbnail: '', title: ${BUILD_DISPLAY_NAME} , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
@@ -27,7 +27,7 @@
             post { 
               failure  { 
                 echo 'Quality Gate stage fail'
-                discordSend description: ${BUILD_URL} , footer: '', image: '', link: '', result: ${BUILD_DISPLAY_NAME} , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
@@ -54,7 +54,7 @@
         post {
            success {
                 echo 'Pipeline succeeded!'
-                discordSend description: ${BUILD_DISPLAY_NAME} , footer: '', image: '', link: '', result: currentBuild.currentResult, scmWebUrl: '', thumbnail: '', title: ${BUILD_DISPLAY_NAME} , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
             }
           }
         }
