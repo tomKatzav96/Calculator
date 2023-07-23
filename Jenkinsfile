@@ -5,6 +5,8 @@
           ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
           FAIL_TITLE = "Failed Pipeline: ${JOB_NAME}"
           FAIL_DESCRIPTION = "Something is wrong with build number ${BUILD_DISPLAY_NAME}"
+          SUCCESS_TITLE = "Successful Pipeline: ${JOB_NAME}"
+          SUCCESS_DESCRIPTION = "The pipeline ${JOB_NAME} completed successfully."
         }
         stages {
           stage("Build & SonarQube Analysis") {
