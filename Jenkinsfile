@@ -14,7 +14,7 @@
             post { 
               failure  { 
                 echo 'build & SonarQube analysis stage fail'
-                discordSend description: 'test for webhook', footer: 'tenks test', image: '', link: '', result: 'FAIL', scmWebUrl: '', thumbnail: '', title: 'fail', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: 'Something is wrong with ${env.BUILD_URL}', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Failed Pipeline: ${currentBuild.fullDisplayName}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'              }
               }
             }
           }
@@ -27,8 +27,7 @@
             post { 
               failure  { 
                 echo 'Quality Gate stage fail'
-                discordSend description: 'test for webhook', footer: 'tenks test', image: '', link: '', result: 'FAIL', scmWebUrl: '', thumbnail: '', title: 'fail', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
-              }
+                discordSend description: 'Something is wrong with ${env.BUILD_URL}', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Failed Pipeline: ${currentBuild.fullDisplayName}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'              }
             }
           }
           // stage("Upload To Artifactory") {
@@ -54,7 +53,6 @@
         post {
            success {
                 echo 'Pipeline succeeded!'
-                discordSend description: '', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Success', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
-            }
+                discordSend description: 'The pipeline ${currentBuild.fullDisplayName} completed successfully.', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Success Pipeline: ${currentBuild.fullDisplayName}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'            }
           }
         }
