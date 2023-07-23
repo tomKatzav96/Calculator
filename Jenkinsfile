@@ -9,6 +9,7 @@
             steps {
               withSonarQubeEnv(installationName: 'sq1') {
                 sh 'mvn clean install sonar:sonar'
+                discordSend description: '', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: '1', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
             post { 
