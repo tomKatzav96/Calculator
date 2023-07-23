@@ -3,6 +3,8 @@
         environment {
           CI = true
           ARTIFACTORY_ACCESS_TOKEN = credentials('artifactory-access-token')
+          FAIL_TITLE = "Failed Pipeline: ${BUILD_DISPLAY_NAME}"
+          FAIL_DESCRIPTION = "Something is wrong with ${BUILD_NUMBER}"
         }
         stages {
           stage("Build & SonarQube Analysis") {
@@ -14,7 +16,7 @@
             post { 
               failure  { 
                 echo 'build & SonarQube analysis stage fail'
-                discordSend description: "Something is wrong with" BUILD_NUMBER "in stage Build & SonarQube Analysis", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: FAIL_DESCRIPTION, footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: FAIL_TITLE , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
@@ -27,7 +29,7 @@
             post { 
               failure  { 
                 echo 'Quality Gate stage fail'
-                discordSend description: "Something is wrong with" BUILD_NUMBER "in stage Quality Gate", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: FAIL_DESCRIPTION, footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: FAIL_TITLE , webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
