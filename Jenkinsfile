@@ -16,7 +16,7 @@
             post { 
               failure  { 
                 echo 'build & SonarQube analysis stage fail'
-                discordSend description: 'Something is wrong with ${BUILD_URL}', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Failed Pipeline: ${BUILD_DISPLAY_NAME}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: 'Something is wrong with ${BUILD_URL}', footer: '', image: '', link: '', result: currentBuild.currentResult, scmWebUrl: '', thumbnail: '', title: 'Failed Pipeline: ${BUILD_DISPLAY_NAME}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
@@ -29,7 +29,7 @@
             post { 
               failure  { 
                 echo 'Quality Gate stage fail'
-                discordSend description: 'Something is wrong with ${BUILD_URL}', footer: '', image: '', link: '', result: '', scmWebUrl: '', thumbnail: '', title: 'Failed Pipeline: ${BUILD_DISPLAY_NAME}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
+                discordSend description: 'Something is wrong with ${BUILD_URL}', footer: '', image: '', link: '', result: currentBuild.currentResult, scmWebUrl: '', thumbnail: '', title: 'Failed Pipeline: ${BUILD_DISPLAY_NAME}', webhookURL: 'https://discord.com/api/webhooks/1132648511058497556/8yRNdxJ_9jY4-QDZIbotxpufmbzvgTf9MZSm0OUSgid9ri72yfPtQ-NFLDEo7LECbRC9'
               }
             }
           }
