@@ -8,6 +8,7 @@
           stage("Build & SonarQube Analysis") {
             steps {
               withSonarQubeEnv(installationName: 'sq1') {
+                sh 'echo ${BUILD_URL}'
                 sh 'mvn clean install sonar:sonar'
                 sh 'echo ${BUILD_URL}'
               }
