@@ -4,7 +4,6 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
 **Important note:** This project is based on having a Jenkins master and agent connected.
 
 ![Image](jenkins-for-java(1).png "Architecture of the project")
- לערוך את התמונה של הארכיטקטורה שיהיה נוטיפיקיישן דרך דוסקורד.
 
  להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
 
@@ -57,7 +56,7 @@ check the `Environment variable` checkbox
 click on `Add SonarQube` to add the SonarQube server, I named it `sq1` (you can call it any name that you want)  
 the server URL is the SonarQube serveer URL ( http://<hostname>:9000 )   
 add server authentication token by clicking on `add -> Jenkins`  
-the kind - `secret text`, the secret will be the token that we generate earlier, the ID and Description are `jenkins-sonar`  
+the kind is secret text, the secret is the token that we generate earlier, the ID and Description are `jenkins-sonar`  
 click `Add`, select it, and save
 
 ### Artifactory
