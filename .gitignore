@@ -7,5 +7,5 @@ out/
 target/
 
 # Architecture
-jenkins-jfrog-maven.excalidraw
+*.excalidraw
 

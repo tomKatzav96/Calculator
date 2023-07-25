@@ -3,7 +3,7 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
 
 **Important note:** This project is based on having a Jenkins master and agent connected.
 
-![Image](jenkins-jfrog-maven.png "Architecture of the project")
+![Image](jenkins-for-java.png "Architecture of the project")
  לערוך את התמונה של הארכיטקטורה שיהיה נוטיפיקיישן דרך דוסקורד.
 
  להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
