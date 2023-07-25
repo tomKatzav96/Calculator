@@ -60,6 +60,7 @@ click `Add`, select it, and save
 ### Artifactory
 
 #### Artifactory quick setup
+
 Launch an instance in AWS using Ubuntu 20.04 image, instance type t3.medium, and add external ports: 8081, 8082.
 1. Download the installer
 ```bash
@@ -79,11 +80,8 @@ sudo systemctl start artifactory.service
 ```URL
 http://<hostname>:8082
 ```
-
 For Example http://localhost:8082 or http://192.168.86.243:8082
-
 The JFrog Platform will take about a minute to start up
-
 Once the platform is up, log in using username `admin` and password `password`
 
 #### Connect Artifactory with Jenkins
@@ -94,8 +92,10 @@ Once the platform is up, log in using username `admin` and password `password`
 
 First, set up Plugin Discord on Jenkins. Its name: Discord Notifier  
 Second, Open Discord (Admin), on Setting -> Integrations. Create a new webhook integrated with #Channel (target)  
-copy the webhook URL and modify this example for your needs:  
-`discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "Webhook URL"`
+copy the webhook URL and modify the example below for your needs:  
+```
+discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "Webhook URL"
+```
 
 ## Acknowledgements
 
