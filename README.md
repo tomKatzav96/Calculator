@@ -7,8 +7,6 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
 
  להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
 
-לחשוב איך לעשות טריגל לפייליין של ג'נקינס מהגיהאב אם בכלל שיהיה טריגר
- או לעשות שלא יהיה תריגל בכלל ולשנות את התמונה של הארכיטקטורה
 
 ## Create SonarQube and Artifactory servers
 
@@ -92,9 +90,12 @@ Once the platform is up, log in using username `admin` and password `password`
 להסביר איך חיברנו בין ארטיפאקטורי וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה  
 צריך לעשות רישיון עדיין אל עשיתי
 
-## Doscord Notification
+## Discord Notification
 
-להסביר איך יצרתי חיבור של שליחת הודעה מג'נקינס לדיסקורד, וכל זה
+First, set up Plugin Discord on Jenkins. Its name: Discord Notifier  
+Second, Open Discord (Admin), on Setting -> Integrations. Create a new webhook integrated with #Channel (target)  
+copy the webhook URL and modify this example for your needs:  
+`discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: "Webhook URL"`
 
 ## Acknowledgements
 
