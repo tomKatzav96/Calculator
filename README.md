@@ -38,9 +38,9 @@ http://<hostname>:8082
 
 For Example http://localhost:8082 or http://192.168.86.243:8082
 
-The JFrog Platform will take about a minute to start up.
+The JFrog Platform will take about a minute to start up
 
-Once the platform is up, log in using username `admin` and password `password`.
+Once the platform is up, log in using username `admin` and password `password`
 
 #### Connect Artifactory with Jenkins
 להסביר איך חיברנו בין ארטיפאקטורי וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה  
@@ -49,7 +49,7 @@ Once the platform is up, log in using username `admin` and password `password`.
 ### SonarQube
 #### Installing an instance of SonarQube with Docker image
 
-Launch an instance in AWS using Ubuntu 22.04 image, instance type t2.medium, and add external port: 9000.   
+Launch an instance in AWS using Ubuntu 22.04 image, instance type t2.medium, and add external port: 9000   
   
 **Important note:** Before you continue make sure you have docker installed in this instance
 
@@ -70,10 +70,31 @@ http://<hostname>:8082
 
 For Example http://localhost:8082 or http://192.168.86.243:8082
 
-Once the platform is up, log in using username `admin` and password `admin`.
+Once the platform is up, log in using username `admin` and password `admin`
 
-#### Connect SonarQube with Jenkins
-להסביר איך חיברנו בין סונארקיוב וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה
+#### Create an authentication token in SonarQube
+
+In the SonarQube server go to `Administration -> security -> users`  
+under Token click on `Token update`   
+token name: `Jenkins` (you can call it whatever you want)   
+click `generate` and save the token in a note, you will use it later
+
+#### Install SonarQube Scanner for Jenkins plugin
+
+In the Jenkins server go to `Manage Jenkins -> Manage Plugins -> available` and type `Sonar`  
+the plugin that we want is `SonarQube Scanner`  
+click on the check box and then click on `download now and install after restart`  
+restart Jenkins and make sure that the SonarQube scanner for Jenkins is installed
+
+#### Configure a SonarQube server in Jenkins
+
+Go to `Manage Jenkins -> Configure System` and scroll down to the `SonarQube` section  
+check the `Environment variable` checkbox  
+click on `Add SonarQube` to add the SonarQube server, I named it `sq1` (you can call it any name that you want)  
+the server URL is the SonarQube serveer URL ( http://<hostname>:9000 )   
+add server authentication token by clicking on `add -> Jenkins`  
+the kind - `secret text`, the secret will be the token that we generate earlier, the ID and Description are `jenkins-sonar`  
+click `Add`, select it, and save
 
 ## Doscord Notification
 
