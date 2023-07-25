@@ -3,7 +3,7 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
 
 **Important note:** This project is based on having a Jenkins master and agent connected.
 
-![Image](jenkins-for-java(1).png "Architecture of the project")
+![Image](jenkins-for-java.png "Architecture of the project")
 
  להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
 
@@ -113,6 +113,3 @@ discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: 
 ![Artifactory](https://img.shields.io/badge/Artifactory-1997B5&?logo=jfrog&logoColor=white&style=for-the-badge)
 
 ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
-
-## Roadmap
-.....
