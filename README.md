@@ -8,10 +8,8 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
  להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
 
 
-## Create SonarQube and Artifactory servers
-
-### SonarQube
-#### Installing an instance of SonarQube with Docker image
+## Create SonarQube servers
+### Installing an instance of SonarQube with Docker image
 
 Launch an instance in AWS using Ubuntu 22.04 image, instance type t2.medium, and add external port: 9000   
 **Important note:** Before you continue make sure you have docker installed in this instance
@@ -25,7 +23,7 @@ docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000
  docker update --restart always sonarqube
  ```
 
-#### Access the SonarQube Platform
+### Access the SonarQube Platform
 
 ```URL
 http://<hostname>:8082
@@ -33,21 +31,21 @@ http://<hostname>:8082
 For Example http://localhost:8082 or http://192.168.86.243:8082
 Once the platform is up, log in using username `admin` and password `admin`
 
-#### Create an authentication token in SonarQube
+### Create an authentication token in SonarQube
 
 In the SonarQube server go to `Administration -> security -> users`  
 under Token click on `Token update`   
 token name: `Jenkins` (you can call it whatever you want)   
 click `generate` and save the token in a note, you will use it later
 
-#### Install SonarQube Scanner for Jenkins plugin
+### Install SonarQube Scanner for Jenkins plugin
 
 In the Jenkins server go to `Manage Jenkins -> Manage Plugins -> available` and type `Sonar`  
 the plugin that we want is `SonarQube Scanner`  
 click on the check box and then click on `download now and install after restart`  
 restart Jenkins and make sure that the SonarQube scanner for Jenkins is installed
 
-#### Configure a SonarQube server in Jenkins
+### Configure a SonarQube server in Jenkins
 
 Go to `Manage Jenkins -> Configure System` and scroll down to the `SonarQube` section  
 check the `Environment variable` checkbox  
@@ -57,9 +55,8 @@ add server authentication token by clicking on `add -> Jenkins`
 the kind is secret text, the secret is the token that we generate earlier, the ID and Description are `jenkins-sonar`  
 click `Add`, select it, and save
 
-### Artifactory
-
-#### Artifactory quick setup
+## Create Artifactory servers
+### Artifactory quick setup
 
 Launch an instance in AWS using Ubuntu 20.04 image, instance type t3.medium, and add external ports: 8081, 8082.
 1. Download the installer
@@ -75,7 +72,7 @@ sudo apt install ./artifactory-pro.deb -y
 sudo systemctl start artifactory.service
 ```
 
-#### Access the JFrog Platform
+### Access the JFrog Platform
 
 ```URL
 http://<hostname>:8082
@@ -84,11 +81,11 @@ For Example http://localhost:8082 or http://192.168.86.243:8082
 The JFrog Platform will take about a minute to start up
 Once the platform is up, log in using username `admin` and password `password`
 
-#### Connect Artifactory with Jenkins
+### Connect Artifactory with Jenkins
 להסביר איך חיברנו בין ארטיפאקטורי וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה  
 צריך לעשות רישיון עדיין אל עשיתי
 
-## Discord Notification
+## Create Discord Notification
 
 First, set up Plugin Discord on Jenkins. Its name: Discord Notifier  
 Second, Open Discord (Admin), on Setting -> Integrations. Create a new webhook integrated with #Channel (target)  
