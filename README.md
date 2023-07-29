@@ -6,7 +6,7 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
 
 ![Image](jenkins-for-java.png "Architecture of the project")
 
- להוסיף צילום מסך של הפייליין בג'נקינס של השלבים שהצליחו  
+![Image](seccess-pipline.png "Seccess pipeline")
 
 
 ## Create SonarQube servers
