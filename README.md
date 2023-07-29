@@ -4,7 +4,8 @@ Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator 
 
 **Important note:** This project is based on having a Jenkins master and agent connected.
 
-![Image](jenkins-for-java.png "Architecture of the project")
+![Image](jenkins-for-java.png "Architecture of the project")  
+
 
 ![Image](seccess-pipline.png "Seccess pipeline")
 
