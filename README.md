@@ -1,4 +1,5 @@
 # Jenkins pipeline for Java application
+
 Jenkins pipeline using SonarQube, Maven, and Artifactory for a basic calculator application written in Java, forked from [HouariZegai/Calculator](https://github.com/HouariZegai/Calculator).  
 
 **Important note:** This project is based on having a Jenkins master and agent connected.
@@ -50,7 +51,7 @@ restart Jenkins and make sure that the SonarQube scanner for Jenkins is installe
 Go to `Manage Jenkins -> Configure System` and scroll down to the `SonarQube` section  
 check the `Environment variable` checkbox  
 click on `Add SonarQube` to add the SonarQube server, I named it `sq1` (you can call it any name that you want)  
-the server URL is the SonarQube serveer URL ( http://<hostname>:9000 )   
+the server URL is the SonarQube serveer URL ( `http://<hostname>:9000` )   
 add server authentication token by clicking on `add -> Jenkins`  
 the kind is secret text, the secret is the token that we generate earlier, the ID and Description are `jenkins-sonar`  
 click `Add`, select it, and save
@@ -81,9 +82,23 @@ For Example http://localhost:8082 or http://192.168.86.243:8082
 The JFrog Platform will take about a minute to start up
 Once the platform is up, log in using username `admin` and password `password`
 
-### Connect Artifactory with Jenkins
-להסביר איך חיברנו בין ארטיפאקטורי וג'נקינס. כולל רישיון וכל מה שצריך וטוקן וזה  
-צריך לעשות רישיון עדיין אל עשיתי
+### Create a local repository in Artifactory
+
+Click on `Welcome, admin` -> `New Local Repository`  
+The name is `java-calculator` and the type is General.  
+write the Repository Key as java-calculator and click on `create local repository`
+
+###  Create an access token in Artifactory
+
+Click on ` Administration -> User Management -> Access Tokens`  
+Click on `Generate  Token`, Description is `Jenkins`, and `Generate`  
+Copy and save the Token in your note.  
+
+###  Create a secret text credential in Jenkins
+
+Go to `Manage Jenkins -> Manage Credentials` and create new secret text.  
+the secret is the token that you generated in the previous step.  
+the Description and the ID are `artifactory-access-token` and click OK
 
 ## Create Discord Notification
 
